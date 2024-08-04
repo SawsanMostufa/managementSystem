@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./parent.component.scss']
 })
 export class ParentComponent {
-
+  childText:string="child component";
+  handleTextChange(newText: string) {
+    this.childText =this.childText+''+ newText;
+  }
 }

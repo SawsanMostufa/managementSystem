@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class ChildComponent {
 
+@Input() childText: string = "child component";
+@Output() textChange: EventEmitter<string> = new EventEmitter<string>();
+notifyParent() {
+  debugger
+  this.textChange.emit(this.childText);
+}
 }
